@@ -38,14 +38,15 @@ namespace BariStop.Services.Services
             return _mapper.Map<IEnumerable<ProductDTO>>(products);
         }
 
-        public Task<ProductDTO> GetProductByIdAsync(int productId)
+        public async Task<ProductDTO> GetProductByIdAsync(int productId)
         {
-            return _mapper.Map<ProductDTO>()
+            return _mapper.Map<ProductDTO>(await  _repository.GetByIdAsync(productId));
         }
 
-        public Task UpdateProductAsync(ProductDTO product)
+        public async Task UpdateProductAsync(ProductDTO product)
         {
-            throw new NotImplementedException();
+            var productEntity = _mapper.Map<Product>(product);
+            await _repository.UpdateAsync(productEntity);
         }
     }
 }
