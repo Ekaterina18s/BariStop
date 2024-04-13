@@ -36,9 +36,9 @@ namespace BariStop.Data.Repositories
             }
         }
 
-        public Task<List<T>> GetAllAsync()
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
-            return _dbSet.ToListAsync();
+            return await _dbSet.ToListAsync();
         }
 
         public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> predicate)
