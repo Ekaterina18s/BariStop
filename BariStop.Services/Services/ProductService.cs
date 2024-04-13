@@ -40,7 +40,7 @@ namespace BariStop.Services.Services
 
         public Task<ProductDTO> GetProductByIdAsync(int productId)
         {
-            throw new NotImplementedException();
+            return _mapper.Map<ProductDTO>()
         }
 
         public Task UpdateProductAsync(ProductDTO product)
