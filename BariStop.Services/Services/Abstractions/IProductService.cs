@@ -1,4 +1,5 @@
 ﻿using BariStop.Data.Data;
+using BariStop.Services.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,13 @@ using System.Threading.Tasks;
 
 namespace BariStop.Services.Services.Abstractions
 {
-    public class IProductService
+    public interface IProductService
     {
-        Task<IEnumerable<Product>> GetAllProductsAsync();
+        Task<IEnumerable<ProductDTO>> GetAllProductsAsync();
+        Task<ProductDTO> GetProductByIdAsync(int productId);
+        Task CreateProductAsync(ProductDTO product);
+        Task UpdateProductAsync(ProductDTO product);
+        Task DeleteProductAsync(int productId);
+
     }
 }

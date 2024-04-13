@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BariStop.Services.DTOs
 {
-    internal class ProductDTO
+    public class ProductDTO : BaseDTO
     {
+        public string Name { get; set; }
+        public string Origin { get; set; }
+        public string Flavor { get; set; }
+        public string Use { get; set; }
     }
 }

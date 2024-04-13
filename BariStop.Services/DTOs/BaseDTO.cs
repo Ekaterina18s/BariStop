@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BariStop.Services.DTOs
 {
-    internal class BaseDTO
+    public abstract class BaseDTO
     {
+        public int Id { get; set; }
     }
 }
