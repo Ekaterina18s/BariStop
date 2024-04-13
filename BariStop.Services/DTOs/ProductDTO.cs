@@ -12,5 +12,6 @@ namespace BariStop.Services.DTOs
         public string Origin { get; set; }
         public string Flavor { get; set; }
         public string Use { get; set; }
+        public string Description { get; set; }
     }
 }
