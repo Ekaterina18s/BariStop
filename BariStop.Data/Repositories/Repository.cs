@@ -1,5 +1,6 @@
 ﻿using BariStop.Data.Data.Abstractions;
 using BariStop.Data.Repositories.Abstractions;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace BariStop.Data.Repositories
 {
     public class Repository<T> : IRepository<T> where T : BaseEntity
     {
-        private readonly DbContext _context;
+        private readonly ApplicationDbContext _context;
         private readonly DbSet<T> _dbSet;   
 
         public Repository(DbContext context)
