@@ -16,7 +16,7 @@ namespace BariStop.Data.Repositories
         private readonly ApplicationDbContext _context;
         private readonly DbSet<T> _dbSet;   
 
-        public Repository(DbContext context)
+        public Repository(ApplicationDbContext context)
         {
             _context = context;
             _dbSet = _context.Set<T>();
